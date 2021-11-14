@@ -1,14 +1,18 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
 class CustomTextFeildGenrator extends StatelessWidget {
   String? hintText;
   TextEditingController? controller;
   TextInputType? keyboardType;
+  int? maxLength;
 
   CustomTextFeildGenrator({
     required this.hintText,
     required this.controller,
     required this.keyboardType,
+    required this.maxLength,
   });
 
   @override
@@ -16,6 +20,7 @@ class CustomTextFeildGenrator extends StatelessWidget {
     return TextField(
       controller: controller,
       keyboardType: keyboardType,
+      maxLines: maxLength,
       decoration: InputDecoration(
         fillColor: const Color(0xffe7edeb),
         filled: true,
