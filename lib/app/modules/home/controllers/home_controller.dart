@@ -84,6 +84,12 @@ class HomeController extends GetxController {
       productImage: downloadUrl,
       productId: productIdController.text,
     );
+
+    selectImagePath.value = '';
+
+    productNameController.clear();
+    productPriceController.clear();
+    productDescriptionController.clear();
   }
 
   @override
