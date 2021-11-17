@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,16 +11,19 @@ class DataBase {
 
   FirebaseStorage storage = FirebaseStorage.instance;
 
+  FirebaseAuth auth = FirebaseAuth.instance;
+
   var uuid = const Uuid();
 
   String productImageUrl = '';
 
-  uploadTheProduct(
-      {required String productName,
-      required String productDescription,
-      required double productPrice,
-      required String productImage,
-      required String productId}) async {
+  uploadTheProduct({
+    required String productName,
+    required String productDescription,
+    required double productPrice,
+    required String productImage,
+    required String productId,
+  }) async {
     Map<String, dynamic> productData = {
       'productName': productName,
       'productDiscription': productDescription,
@@ -29,7 +33,7 @@ class DataBase {
     };
 
     try {
-      await collectionReference.doc(uuid.v1()).set(productData);
+      await collectionReference.add(productData);
 
       Get.snackbar(
         "Success!",
