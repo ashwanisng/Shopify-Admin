@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uuid/uuid.dart';
@@ -7,7 +10,11 @@ class DataBase {
   CollectionReference collectionReference =
       FirebaseFirestore.instance.collection('productData');
 
+  FirebaseStorage storage = FirebaseStorage.instance;
+
   var uuid = const Uuid();
+
+  String productImageUrl = '';
 
   uploadTheProduct(
       {required String productName,
@@ -46,4 +53,13 @@ class DataBase {
       );
     }
   }
+
+  // uploadProductImage({required File file}) async {
+  //   var snapshot =
+  //       await storage.ref().child('images/${file.path}').putFile(file);
+
+  //   var downloadUrl = await snapshot.ref.getDownloadURL();
+
+  //   productImageUrl = downloadUrl;
+  // }
 }
