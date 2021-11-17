@@ -117,7 +117,7 @@ class LoginView extends GetView<LoginController> {
                                                   false
                                               ? Icon(
                                                   Icons.remove_red_eye,
-                                                  color: Colors.grey[600],
+                                                  color: Env.colors.primaryRed,
                                                 )
                                               : Icon(
                                                   Icons.visibility_off,

@@ -142,7 +142,7 @@ class RegisterView extends GetView<RegisterController> {
                                                 )
                                               : Icon(
                                                   Icons.visibility_off,
-                                                  color: Colors.grey[600],
+                                                  color: Env.colors.primaryRed,
                                                 ),
                                           onPressed: () =>
                                               controller.tooglePassword(),
