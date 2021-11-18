@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shopify_admin/app/core/enviroment/env.dart';
 
 import 'package:shopify_admin/app/modules/home/controllers/home_controller.dart';
 import 'package:shopify_admin/app/modules/home/views/components/custom_button.dart';
@@ -24,6 +25,17 @@ class HomeView extends GetView<HomeController> {
             fontSize: 24,
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.exit_to_app,
+              color: Colors.red,
+            ),
+            onPressed: () {
+              controller.authService.signOut();
+            },
+          ),
+        ],
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,

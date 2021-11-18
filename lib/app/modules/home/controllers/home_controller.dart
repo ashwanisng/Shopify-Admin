@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:shopify_admin/app/data/service/auth/authentication.dart';
 import 'package:shopify_admin/app/data/service/database/database.dart';
 
 class HomeController extends GetxController {
@@ -16,6 +17,9 @@ class HomeController extends GetxController {
   TextEditingController productPriceController = TextEditingController();
   TextEditingController productDescriptionController = TextEditingController();
   TextEditingController productIdController = TextEditingController();
+
+  FirebaseAuthenticationService authService =
+      Get.find<FirebaseAuthenticationService>();
 
   var selectImagePath = ''.obs;
 

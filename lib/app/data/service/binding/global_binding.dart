@@ -10,20 +10,25 @@ class GlobalBindings extends Bindings {
   void dependencies() {
     Get.lazyPut<EntryController>(
       () => EntryController(),
+      fenix: true,
     );
 
     Get.lazyPut<HomeController>(
       () => HomeController(),
+      fenix: true,
     );
     Get.lazyPut<LoginController>(
       () => LoginController(),
+      fenix: true,
     );
 
     Get.lazyPut<RegisterController>(
       () => RegisterController(),
+      fenix: true,
     );
     Get.lazyPut<FirebaseAuthenticationService>(
       () => FirebaseAuthenticationService(),
+      fenix: true,
     );
   }
 }
