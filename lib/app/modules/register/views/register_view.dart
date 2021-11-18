@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopify_admin/app/core/enviroment/env.dart';
 import 'package:shopify_admin/app/modules/home/views/components/custom_button.dart';
-import 'package:shopify_admin/app/modules/home/views/home_view.dart';
 import 'package:shopify_admin/app/modules/login/views/login_view.dart';
 
 import 'package:shopify_admin/app/modules/register/controllers/register_controller.dart';

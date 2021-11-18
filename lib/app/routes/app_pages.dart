@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:shopify_admin/app/modules/entry/bindings/entry_binding.dart';
+import 'package:shopify_admin/app/modules/entry/views/entry_view.dart';
 import 'package:shopify_admin/app/modules/home/bindings/home_binding.dart';
 import 'package:shopify_admin/app/modules/home/views/home_view.dart';
 import 'package:shopify_admin/app/modules/login/bindings/login_binding.dart';
@@ -11,7 +13,7 @@ part 'app_routes.dart';
 
 class AppPages {
   // ignore: constant_identifier_names
-  static const INITIAL = Routes.REGISTER;
+  static const INITIAL = Routes.ENTRY;
 
   static final routes = [
     GetPage(
@@ -28,6 +30,11 @@ class AppPages {
       name: _Paths.REGISTER,
       page: () => RegisterView(),
       binding: RegisterBinding(),
+    ),
+    GetPage(
+      name: _Paths.ENTRY,
+      page: () => EntryView(),
+      binding: EntryBinding(),
     ),
   ];
 }
