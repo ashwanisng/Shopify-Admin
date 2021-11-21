@@ -23,6 +23,7 @@ class DataBase {
     required double productPrice,
     required String productImage,
     required String productId,
+    required RxBool isFavourite,
   }) async {
     Map<String, dynamic> productData = {
       'productName': productName,
@@ -30,6 +31,7 @@ class DataBase {
       'productPrice': productPrice,
       'productImage': productImage,
       'productId': uuid.v4(),
+      'isFavourite': isFavourite.value,
     };
 
     try {

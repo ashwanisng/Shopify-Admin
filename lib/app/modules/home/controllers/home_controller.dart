@@ -87,6 +87,7 @@ class HomeController extends GetxController {
       productDescription: productDescriptionController.text,
       productImage: downloadUrl,
       productId: productIdController.text,
+      isFavourite: false.obs,
     );
 
     selectImagePath.value = '';
